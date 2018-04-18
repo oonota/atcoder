@@ -64,6 +64,7 @@ int middle(int *array,int a,int N)
 
 	int *x;
 	int j;
+	int m;
 
 	x = (int *)calloc(N-1,sizeof(int *));
 
@@ -77,8 +78,9 @@ int middle(int *array,int a,int N)
 
 	bubblesort(x,N-1);
 
+	m = x[(N-1)/2];
 	free(x);
 	
-	return x[(N-1)/2];
+	return m;
 
 }
