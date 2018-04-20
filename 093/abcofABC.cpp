@@ -5,8 +5,8 @@
 
 int main(void){
 
-	int count[3];
-	char line[3];
+	int count[NUM] = {0};
+	char line[NUM];
 	int flag = 0;
 
 	std::cin >> line;
