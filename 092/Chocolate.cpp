@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
 
+#define print(x) std::cout << x << std::endl
 #define DAY(i,j) (j)*(A[i])+1
 
 int main(void){
@@ -30,7 +31,7 @@ int main(void){
 	}
 	count += X;
 
-	std::cout << count << std::endl;
+	print(count);
 
 	return 0;
 
