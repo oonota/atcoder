@@ -36,7 +36,7 @@ int main(void){
 	for(i=1;i<unique.size();i++){
 		if(unique[i-1]==unique[i])	unique.erase(unique.begin() +i--);
 	}
-	unique.push_back(unique[i]+'a');
+	unique.push_back(unique[0]+'a');
 	std::vector<int> count(unique.size(),0);
 
 
