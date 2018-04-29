@@ -49,16 +49,17 @@ int main(void){
 	}
 	count = 0;
 	for(int i=0;i<N;i++){
-		for(int j=0;j<blue.size();j++){
+		for(int j=0;j<(int)blue.size();j++){
+			print(blue.size());
 			if(red[i][0]<blue[j][0] && red[i][1]<blue[j][1]){
-				blue.erase(blue.begin()+ j);
+				//blue.erase(blue.begin()+ j);
+				//error 
 				count++;
 				j = N;
 
 			}	
 		}
 	}
-
 
 	return 0;	
 
