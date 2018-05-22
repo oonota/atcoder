@@ -29,6 +29,7 @@ int main(void){
 			}
 			time += C[j];
 		}
+		print(time);
 	}
 	print(0);
 
