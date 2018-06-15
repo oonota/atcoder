@@ -16,13 +16,11 @@ int main(void){
 	for(int i=0;i<H;++i){
 		for(int j=0;j<W;++j){
 			if(S[i][j] == '.'){
-				int a = i-1,b = j-1;
 				int count = 0;
-				for(;a<i-1+3;++a){
-					for(;b<j-1+3;++b){
+				for(int a=i-1;a<i-1+3;++a){
+					for(int b=j-1;b<j-1+3;++b){
 						if(a > -1 && a < H && b > -1 &&  b < W){
 							if(S[a][b] == '#') count++;
-
 						}
 					}
 				}
