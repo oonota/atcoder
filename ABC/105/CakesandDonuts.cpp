@@ -7,12 +7,16 @@ int main(void){
 	int N;
 	std::cin >> N;
 
-	if(N<7 && N<4)
-		print("No");
-	else if(N%4==0 || N%7== 0)
-		print("Yes");
-	else
+	for(int x=0;x<=(N/4);++x){
+		for(int y=0;y<=(N/7);++y){
+			if(4*x+7*y == N){
+				print("Yes");
+				return 0;
+			}
+		}
+	}
 
+	print("No");
 
 	return 0;
 }
