@@ -1,60 +1,49 @@
-#include <iostream>
-#include<vector>
-#include <string>
+#include<bits/stdc++.h>
 
 #define print(x) std::cout << x << std::endl
 
+using namespace std;
 
-bool different_check(char a,char b,char c);
+typedef vector<int> VI;
+typedef vector<string> VS;
 
-int main(void) {
 
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
+
+
+int main(){
+
+	string s;
 	int N;
-	int n,i,flag,j,k;
-	int count;
-	int S_size;
-	std::vector<std::string> S;
-	std::vector<char> keywords{'M','A','R','C','H'};
-	std::string input;
+	long long m, a, r, c, h;
+	long long D[5];
+	int P[10] = {0, 0, 0, 0, 0, 0, 1, 1, 1, 2};
+	int Q[10] = {1, 1, 1, 2, 2, 3, 2, 2, 3, 3};
+	int R[10] = {2, 3, 4, 3, 4, 4, 3, 4, 4, 4};
+	m = a = r = c = h = 0;
 
-	std::cin >> N;	
-
-	for (n = 0; n < N; n++) {
-		std::cin >> input;
-		flag = 0;
-		for(i=0;i<keywords.size();i++){
-			if(keywords[i] == input.front()){ 
-				flag = 1;
-				i = keywords.size();
-			}
-		}
-		if(flag) S.push_back(input);
+	cin >> N;
+	REP(i,N){
+		cin >> s;
+		if(s[0] == 'M') m++;
+		if(s[0] == 'A') a++;
+		if(s[0] == 'R') r++;
+		if(s[0] == 'C') c++;
+		if(s[0] == 'H') h++;
 	}
-	S_size = S.size();
-	count = 0;
-	if(S_size == 0) flag++;  
-	else{
-		for(i=0;i<S_size-2;i++){
-			for(j=i+1;j<S_size-1;j++){
-				for(k=j+1;k<S_size;k++){
-					if(different_check(S[i].front(),S[j].front(),S[k].front()))
-						count++;
-				}
-			}
-		}
 
+	D[0] = m,D[1]=a,D[2]=r,D[3]=c,D[4]=h;
+	long long res=0;
+	REP(i,10){
+		res+=D[P[i]]*D[Q[i]]*D[R[i]];
 	}
-	print(count);
+	print(res);
 
-	return 0;
-}
-bool different_check(char a,char b,char c)
-{
-	bool check1 = (a != b);
-	bool check2 = (a != c);
-	bool check3 = (c != b);
-
-	if(check1 == true && check2 == true && check3 == true) return 1;
-	else return 0;
 
 }
