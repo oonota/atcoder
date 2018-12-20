@@ -1,32 +1,43 @@
-#include <bits/stdc++.h>
+#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
 
 
-/*
- nazeka WA
-*/
 
-#define print(x) std::cout << x << std::endl
+using namespace std;
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+
+
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
+
 
 int main(void){
 
-	int N;
-	std::cin >> N;
+	char N[4];
+	scanf("%s", N);
+	int flag = 0;
 
-	int p = N;
-	std::map<int ,int> count;
-	while(p != 0){
-		count[p%10]++;	
-		p /= 10;
-	}
+	if(N[0] == N[1] && N[0] == N[2]) flag = 1;
 
-	for(auto itr=count.begin();itr!=count.end();++itr){
-		if(itr->second > 2){
-			print("Yes");
-			return 0;
-		}
-	}
+	else if(N[1] == N[2] && N[1] == N[3])flag = 1;
 
 
-	print("No");
+
+
+
+	if(flag == 1) printf("Yes\n");
+	else printf("No\n");
+
 	return 0;
+
 }

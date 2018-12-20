@@ -1,18 +1,37 @@
-#include <bits/stdc++.h>
+#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
 
-#define print(x) std::cout << x << std::endl
 
-// # WA wakarann
+
+using namespace std;
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+
+
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
+
 
 int main(void){
 
-	int n,k;
-	std::cin >> n >> k;
+	int N,K;
+	scanf("%d %d", &N, &K);
 
-	if(n%k == 0)
-		print(0);
-	else
-		print(std::abs(n/k+(n%k)-n/k));
+	int diff = 0;
+	if(N%K != 0)diff = 1; //diff = abs(N/K-(N%K));
+
+	printf("%d\n",diff);
+
 
 	return 0;
+
 }

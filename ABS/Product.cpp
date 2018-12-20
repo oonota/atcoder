@@ -20,17 +20,14 @@ typedef vector<string> VS;
 #define REP(i,n)  FOR(i,0,n)
 
 
-
 int main(void){
 
-	int X,A,B;
-	scanf("%d %d %d", &X, &A, &B);
+	
+	int a,b;
+	scanf("%d %d",&a, &b);
 
-	int now = -A+B;
-	if(now <= 0) printf("delicious\n");
-	else if(now <= X) printf("safe\n");
-	else printf("dangerous\n");
-
+	if((a*b)%2 == 0 )	printf("Even\n");
+	else	printf("Odd\n");
 
 	return 0;
 

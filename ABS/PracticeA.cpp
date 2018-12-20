@@ -23,13 +23,13 @@ typedef vector<string> VS;
 
 int main(void){
 
-	int X,A,B;
-	scanf("%d %d %d", &X, &A, &B);
+	int a,b,c;
+	char s[101];
+	scanf("%d",&a);
+	scanf("%d %d",&b, &c);
+	scanf("%s",s);
 
-	int now = -A+B;
-	if(now <= 0) printf("delicious\n");
-	else if(now <= X) printf("safe\n");
-	else printf("dangerous\n");
+	printf("%d %s\n",a+b+c,s);
 
 
 	return 0;
