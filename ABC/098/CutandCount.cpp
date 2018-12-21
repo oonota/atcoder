@@ -25,6 +25,7 @@ int main(void){
 
 	int N;
 	scanf("%d", &N);
+	printf("N:%p\n",&N);
 	char s[N];
 	scanf("%s", s);
 
@@ -33,21 +34,27 @@ int main(void){
 
 	int front[26] = {0};
 	int back[26] = {0};
-	FOR(i,1,N){
+	for(int i=1;i<N;++i){
 
-		printf("N:%d\n",N);
-		REP(j,i) front[s[j] - 'a']++;
-		FOR(j,i,N) back[s[j] - 'a']++;
-		printf("N:%d\n",N);
+		for(int j=0;j<i;++j) front[s[j] - 'a']++;
+		for(int j=i;j<N;++j) back[s[j] - 'a']++;
 
 		count = 0;
-		REP(j,N) if(front[j] > 0 && back[j] > 0) count++;
+		printf("N:%d\n",N);
+		for(int j=0;j<N;++j){
+			if(front[j] > 0 && back[j] > 0) count++;
+		}
 
 		ans = max(count,ans);
 
-		REP(k,N) front[k] = back[k] = 0;
-
-		// Nが０になる
+		printf("N:%d\n",N);
+		for(int j=0;j<N;++j){
+			front[j] = 0;
+			back[j] = 0;
+			printf("front[%d]:%p back[%d]:%p\n",j,&front[j],j,&back[j]);
+		}
+		printf("N:%p\n",&N);
+		// tが０になる
 
 	}
 
