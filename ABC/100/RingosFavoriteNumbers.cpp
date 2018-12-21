@@ -1,20 +1,35 @@
-#include <bits/stdc++.h>
+#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
 
-#define print(x) std::cout << x << std::endl
+
+
+using namespace std;
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+
+
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
+
 
 int main(void){
 
 	int D,N;
-	std::cin >> D >> N;
+	scanf("%d %d", &D, &N);
 
-	if(D == 0){
-		print(N);
-	}else{
-		int hundred = 1;
-		for(int i=0;i<D;++i)
-			hundred *= 100;
+	if(N == 100) N = 101;
+	printf("%d\n",(int)pow(100,D)*N);
 
-		print(hundred*N);
-	}
+
 	return 0;
+
 }

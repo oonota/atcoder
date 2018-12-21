@@ -1,6 +1,10 @@
-#include<bits/stdc++.h>
+#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
 
-#define print(x) std::cout << x << std::endl
+
 
 using namespace std;
 
@@ -20,32 +24,28 @@ typedef vector<string> VS;
 int main(void){
 
 	int N,M,X,Y;
-	cin >> N >> M >> X >> Y;
+	scanf("%d %d %d %d", &N, &M, &X, &Y);
 
-	VI x(N,0);
-	VI y(M,0);
-	REP(i,N) cin >> x[i];
-	REP(i,M) cin >> y[i];
-
-	SORT(x);
-	SORT(y);
-
-	
-	auto x_result = find(x.begin(), x.end(), Y);
-	auto y_result = find(y.begin(), y.end(), X);
-	
-	if(x_result != x.end() || y_result != y.end()){
-		print("War");
-		return 0;
+	int x_max = X;	
+	int x;
+	REP(i,N){
+		scanf("%d", &x);
+		x_max = max(x_max,x);
 	}
 
+	int y_min = Y;	
+	int y;
+	REP(i,M){
+		scanf("%d", &y);
+		y_min = min(y_min,y);
+	}
 
-	if(x.back() < y.front()){
-		int Z = x.back()+1;
-		
-		print("No War");
+	// printf("%d\n",x_max);
+	// printf("%d\n",y_min);
+	if(x_max<y_min){
+		printf("No War\n");
 	}else{
-		print("War");
+		printf("War\n");
 	}
 
 

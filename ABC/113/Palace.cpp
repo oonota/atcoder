@@ -1,41 +1,51 @@
-#include <cstdio>
+#include <stdio.h>
+#include <cmath>
+#include <string>
 #include <vector>
 #include <algorithm>
-#include <math.h>
+
+
 
 using namespace std;
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+
+
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
 
 
 int main(void){
 
 	int N;
-	int T,A;
-	vector<int> H(N,0);
+	double T,A;
+	double H;
 
-	scanf("%d",&N);
-	scanf("%d",&T);
-	scanf("%d",&A);
+	scanf("%d", &N);
+	scanf("%lf %lf", &T, &A);
 
-	int tmp;
-	int test;
-	int min = 1000000000;
 	int index = 0;
-	for(int i=0;i<N;++i){
-		scanf("%d",&tmp);
-	
-		test = T - tmp*0.006;
-		
-		int abs = fabs(test-T);
-		if(min>abs){
-			min = abs;
-			index = i+1;
+	double min = 100000000.0;
+	double here;
+
+	REP(i,N){
+		scanf("%lf", &H); 
+		here = fabs(A-(T - H*0.006));	
+		// printf("%f\n", here);
+		if(here < min){
+			index = i;
+			min = here;
 		}
 
 	}
 
-	printf("%d\n",index);
-
-
+	printf("%d\n",index+1);
 	return 0;
 
 }
