@@ -23,13 +23,11 @@ typedef vector<string> VS;
 
 int main(void){
 
-	int A,B,C,D;
-	scanf("%d %d %d %d", &A, &B, &C, &D);
-	int ans;
+	int A,B,C;
+	scanf("%d %d %d", &A, &B, &C);
+	
+	if()
 
-	ans = max(min(B,D)  - max(A,C),0);
-
-	printf("%d\n", ans);
 
 	return 0;
 

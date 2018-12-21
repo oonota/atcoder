@@ -1,28 +1,37 @@
-#include<iostream>
-#include<stdlib.h>
+#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+
+
+using namespace std;
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+
+
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
+
 
 int main(void){
 
 	int A,B,K;
-	int l;
-	int *count;
+	scanf("%d %d %d", &A, &B, &K);
 
-	std::cin >> A >> B >> K;
-
-	l = B - A + 1;
-	count = (int *)calloc(l,sizeof(int *));
-
-
-	for(int i=0;i<K;i++){
-		count[i]++;
-		count[l-i-1]++;
-	}
-
-	for(int i=0;i<l;i++){
-		if(count[i])
-			std::cout << A+i << std::endl;
+	FOR(i,A,B+1){
+		if(i<K+A || B-K<i) printf("%d\n",i);
+		
 	}
 
 
+	return 0;
 
 }

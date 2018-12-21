@@ -1,37 +1,38 @@
-#include<bits/stdc++.h>
+#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
 
-#define print(x) std::cout << x << std::endl
+
+
+using namespace std;
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+
+
+//container util
+#define SORT(c) sort((c).begin(),(c).end())
+
+//repetition
+#define FOR(i,a,b) for(int i=(a);i<(b);++i)
+#define REP(i,n)  FOR(i,0,n)
+
+
 
 int main(void){
 
 	int N;
-	std::cin >> N;
+	int two[7] = {1,2,4,8,16,32,64};
+	scanf("%d", &N);
 
-	int div_num = 0;
-	int large = 0;
+	int i;
+	for(i=0;i<7;++i) if(N < two[i]) break;
+	printf("%d\n",two[i-1]);
 	
-	for(int i=1;i<=N;++i){
-		int number = i;
-		int flag = 1;
-		int div = 0;
 
-		while(flag == 1){
-			if((number%2)==0){
-				div++;
-				number /= 2;
-			}else{
-				flag = 0;
-			}
-		}
 
-		if(div > div_num){
-			div_num = div;
-			large = i;
-		}
-
-	}
-
-	print(large);
 
 	return 0;
 
